@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
 
@@ -18,7 +18,7 @@ public class ApiClient {
 
         retrofit = new Retrofit.Builder()
                 .baseUrl("https://newsapi.org/v2/")
-                .addConverterFactory(ScalarsConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClient)
                 .build();
 
